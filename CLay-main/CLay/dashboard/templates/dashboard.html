@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLay Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            background: #fff;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #444;
+            color: #fff;
+        }
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🛡️ CLay Attack Log Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>⏰ Time</th>
+                <th>🌐 IP</th>
+                <th>📍 Location</th>
+                <th>🚨 Reputation</th>
+                <th>🧠 User-Agent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in logs %}
+            <tr>
+                <td>{{ entry.timestamp }}</td>
+                <td>{{ entry.ip }}</td>
+                <td>{{ entry.location }}</td>
+                <td>{{ entry.reputation }}</td>
+                <td>{{ entry.user_agent }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
